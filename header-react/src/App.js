@@ -1,36 +1,33 @@
 // Importação dos componentes necessarios
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./Components/Header";
-import Home from "./Components/Home";
-import About from "./Components/About";
-import Contact from "./Components/Contact";
+import Home from "./Pages/Home";
+import Produtos from "./Pages/Produtos";
+import Contact from "./Pages/Contact";
 
 // Componente Funcional principal App
 function App() {
-    return(
+    return (
         <div className="App">
-            {/* Componente Header */}
             <Router>
 
                 {/* Componente Header */}
-                <Header>
+                <Header />
 
-                    {/* Definição da rota */}
-                    <Routes>
+                {/* Definição das rotas */}
+                <Routes>
 
-                        {/* Rota para página inicial */}
-                        <Route path="/" element={<Home />} />
+                    {/* Rota para página inicial */}
+                    <Route path="/" element={<Home />} />
 
-                        {/* Rota para página inicial */}
-                        <Route path="/About" element={<About />} />
+                    {/* Rota para produtos */}
+                    <Route path="/produtos" element={<Produtos />} />
 
-                        {/* Rota para página inicial */}
-                        <Route path="/Contact" element={<Contact />} />
-                        
-                    </Routes>
+                    {/* Rota para contato */}
+                    <Route path="/contact" element={<Contact />} />
 
-                </Header>
+                </Routes>
 
             </Router>
         </div>
